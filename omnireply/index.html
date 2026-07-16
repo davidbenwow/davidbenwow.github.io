@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OmniReply — download & install</title>
+  <style>
+    :root {
+      --ink-900:#0f1729; --ink-700:#2b3547; --ink-500:#5a6578; --ink-400:#8592a6;
+      --ink-200:#dfe4ec; --ink-100:#eef1f6; --ink-50:#f7f9fc; --surface:#fff;
+      --brand-500:#0ea5e9; --brand-600:#0284c7; --brand-100:#e6f4fc;
+    }
+    * { box-sizing:border-box; }
+    body {
+      margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-serif;
+      color:var(--ink-900); background:var(--ink-50); line-height:1.55;
+      -webkit-font-smoothing:antialiased;
+    }
+    .wrap { max-width:720px; margin:0 auto; padding:48px 20px 64px; }
+    .back-link { display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:500;
+      color:var(--ink-500); text-decoration:none; border:1px solid var(--ink-200);
+      padding:6px 12px; border-radius:8px; margin-bottom:24px; }
+    .back-link:hover { border-color:var(--ink-400); color:var(--ink-900); }
+    .hero { text-align:center; }
+    .hero .logo-tile { width:72px; height:72px; border-radius:16px; background:var(--brand-100);
+      display:inline-flex; align-items:center; justify-content:center; }
+    .hero .logo-tile svg { width:40px; height:40px; }
+    h1 { font-size:30px; margin:16px 0 6px; letter-spacing:-0.4px; }
+    .tagline { color:var(--ink-500); font-size:16px; margin:0 auto 24px; max-width:520px; }
+    .dl-btn {
+      display:inline-flex; align-items:center; gap:10px; text-decoration:none;
+      background:var(--brand-500); color:#fff; font-weight:600; font-size:17px;
+      padding:14px 28px; border-radius:12px; box-shadow:0 2px 6px rgba(14,165,233,.3);
+      transition:background .15s, transform .05s;
+    }
+    .dl-btn:hover { background:var(--brand-600); }
+    .dl-btn:active { transform:scale(.98); }
+    .ver { margin-top:12px; font-size:13px; color:var(--ink-400); }
+    .save-note { margin-top:6px; font-size:12px; color:var(--ink-400); }
+
+    .section-title { font-size:13px; font-weight:700; letter-spacing:.8px;
+      text-transform:uppercase; color:var(--ink-400); margin:48px 0 16px; }
+
+    .step {
+      background:var(--surface); border:1px solid var(--ink-200); border-radius:14px;
+      padding:20px 22px; margin-bottom:16px;
+    }
+    .step-head { display:flex; align-items:baseline; gap:12px; }
+    .step-num {
+      flex:0 0 auto; width:26px; height:26px; border-radius:50%;
+      background:var(--brand-100); color:var(--brand-600); font-weight:700; font-size:14px;
+      display:flex; align-items:center; justify-content:center; align-self:flex-start;
+      margin-top:1px;
+    }
+    .step h3 { margin:0; font-size:17px; }
+    .step p { margin:6px 0 0; color:var(--ink-700); }
+    .step p.sub { color:var(--ink-500); font-size:14px; }
+    .step code, .step kbd {
+      background:var(--ink-100); border-radius:5px; padding:1px 6px; font-size:13px;
+      font-family:ui-monospace,SFMono-Regular,Menlo,monospace; color:var(--ink-900);
+    }
+    .step ol, .step ul { margin:8px 0 0; padding-left:20px; color:var(--ink-700); }
+    .step li { margin:3px 0; }
+    .callout {
+      margin-top:10px; font-size:13px; color:var(--brand-600);
+      background:var(--brand-100); border-radius:8px; padding:8px 12px;
+    }
+    .step-body { padding-left:38px; }
+
+    .shots { margin-top:14px; display:flex; flex-direction:column; gap:16px; }
+    figure.shot { margin:0; }
+    .shot-img { max-width:100%; border-radius:10px; border:1px solid var(--ink-200); display:block; }
+    figure.shot figcaption { margin-top:6px; font-size:12px; color:var(--ink-400); }
+
+    .auto {
+      margin-top:28px; background:#f0fdf4; border:1px solid #bbf7d0; border-radius:12px;
+      padding:16px 18px; color:#15803d; font-size:14px;
+    }
+    .auto strong { color:#15803d; }
+    footer { margin-top:40px; text-align:center; color:var(--ink-400); font-size:12px; }
+    footer a { color:var(--ink-500); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back-link" href="../">&larr; All plugins</a>
+    <div class="hero">
+      <span class="logo-tile" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"/><path d="m10 8-3 3 3 3"/><path d="M17 14v-1a2 2 0 0 0-2-2H7"/>
+        </svg>
+      </span>
+      <h1>OmniReply</h1>
+      <p class="tagline">Generates draft email replies with AI right inside Thunderbird, using your
+        V4 account and your Cover Playground links.</p>
+      <a class="dl-btn" id="dl" href="omnireply-latest.xpi" download>Download latest</a>
+      <div class="ver">Current version: <span id="ver">latest</span></div>
+      <div class="save-note">Tip: <em>save</em> the file — don't open it in the browser.</div>
+    </div>
+
+    <div class="section-title">How to install (about 5 minutes)</div>
+
+    <div class="step">
+      <div class="step-head">
+        <span class="step-num">1</span>
+        <div><h3>Download the add-on</h3></div>
+      </div>
+      <div class="step-body">
+        <p>Click <strong>Download latest</strong> above and save <code>omnireply-latest.xpi</code>
+          somewhere you can find it (e.g. Downloads). Requires <strong>Thunderbird 140 or newer</strong>.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-head">
+        <span class="step-num">2</span>
+        <div><h3>Get your V4 API key</h3></div>
+      </div>
+      <div class="step-body">
+        <p>Open <a href="https://v4.vdm-vsg.de" target="_blank" rel="noopener">v4.vdm-vsg.de</a>,
+          go to <strong>Account</strong>, and copy the <strong>API key</strong> shown below your
+          signatures. Keep it handy — you'll paste it in step&nbsp;5.</p>
+        <div class="shots">
+          <figure class="shot">
+            <img class="shot-img" src="images/v4-api-key.png" alt="V4 account page showing the API key below the signature area">
+            <figcaption>V4 → Account → the API key just below your signature area.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-head">
+        <span class="step-num">3</span>
+        <div><h3>Allow internal add-ons (one-time)</h3></div>
+      </div>
+      <div class="step-body">
+        <p>This add-on is distributed internally, so it isn't signed by the public add-on store.
+          You only need to do this once.</p>
+        <div class="callout">It only affects unsigned installs; signed add-ons still work as before.</div>
+        <ol>
+          <li><strong>Thunderbird</strong> menu → <strong>Settings</strong> (on Windows/Linux: the <kbd>&#9776;</kbd> menu).</li>
+          <li><strong>General</strong> → scroll to the bottom → <strong>Config Editor…</strong> (accept the warning).</li>
+          <li>Search <code>signatures.required</code> → double-click <code>xpinstall.signatures.required</code> so it reads <strong>false</strong>.</li>
+        </ol>
+        <div class="shots">
+          <figure class="shot">
+            <img class="shot-img" src="images/thunderbird-settings-menu.png" alt="Thunderbird menu with Settings highlighted">
+            <figcaption>a. Open Thunderbird Settings.</figcaption>
+          </figure>
+          <figure class="shot">
+            <img class="shot-img" src="images/general-config-editor.png" alt="General settings page showing the Config Editor button">
+            <figcaption>b. In General, scroll down to Config Editor.</figcaption>
+          </figure>
+          <figure class="shot">
+            <img class="shot-img" src="images/xpinstall-signatures-required.png" alt="Config Editor showing xpinstall.signatures.required set to false">
+            <figcaption>c. This value must read <strong>false</strong>.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-head">
+        <span class="step-num">4</span>
+        <div><h3>Install from file</h3></div>
+      </div>
+      <div class="step-body">
+        <ol>
+          <li><strong>Tools</strong> menu → <strong>Add-ons and Themes</strong>.</li>
+          <li>Gear <kbd>&#9881;</kbd> (top-right) → <strong>Install Add-on From File…</strong>
+            → choose the <code>.xpi</code> you downloaded → confirm <strong>Add</strong>.</li>
+        </ol>
+        <div class="shots">
+          <figure class="shot">
+            <img class="shot-img" src="images/tools-addons-themes.png" alt="Tools menu with Add-ons and Themes highlighted">
+            <figcaption>a. Open Add-ons and Themes.</figcaption>
+          </figure>
+          <figure class="shot">
+            <img class="shot-img" src="images/install-addon-from-file.png" alt="Add-ons gear menu with Install Add-on From File highlighted">
+            <figcaption>b. Gear menu → Install Add-on From File.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-head">
+        <span class="step-num">5</span>
+        <div><h3>Activate OmniReply</h3></div>
+      </div>
+      <div class="step-body">
+        <p>Open OmniReply's settings, paste the V4 API key you copied in step&nbsp;2, and click
+          <strong>Test connection</strong> — the status should show <strong>Ready</strong>.</p>
+        <div class="shots">
+          <figure class="shot">
+            <img class="shot-img" src="images/activate-api-key.png" alt="OmniReply settings with the V4 API key field and Test connection button">
+            <figcaption>Paste the V4 API key and test the connection.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-head">
+        <span class="step-num">6</span>
+        <div><h3>Add your Cover Playground links</h3></div>
+      </div>
+      <div class="step-body">
+        <p>Paste your personal Cover Playground link for each imprint account you handle. OmniReply
+          includes the matching link when a reply should carry your submission link.</p>
+        <div class="shots">
+          <figure class="shot">
+            <img class="shot-img" src="images/cover-playground-links.png" alt="OmniReply Personal Cover Playground Links settings with a field per imprint account">
+            <figcaption>One personal link per imprint account.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="auto">
+      <strong>That's it.</strong> Open an email in Thunderbird and click <strong>OmniReply</strong> to
+      draft a reply — always read it before sending, especially when it includes links, names, prices,
+      or imprint details. New versions install automatically; you won't need this page again.
+    </div>
+
+    <footer>
+      Internal tool for OmniScriptum ·
+      <a href="updates.json">version history</a>
+    </footer>
+  </div>
+
+  <script>
+    fetch('updates.json')
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        var u = d.addons['omnireply@omniscriptum.com'].updates[0];
+        document.getElementById('ver').textContent = 'v' + u.version;
+      })
+      .catch(function () {
+        document.getElementById('ver').textContent = 'see version history';
+      });
+  </script>
+</body>
+</html>
